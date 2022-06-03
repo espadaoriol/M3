@@ -3,19 +3,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cd ./example-react; npm install; npm start'
+        sh 'cd example-react/; npm install; npm start'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'cd ./example-react; npm run test -- --coverage --watchAll=false'
+        sh 'cd example-react/; npm run test -- --coverage --watchAll=false'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'cd ./example-react; npm run build'
+        sh 'cd example-react/; npm run build'
       }
     }
 
